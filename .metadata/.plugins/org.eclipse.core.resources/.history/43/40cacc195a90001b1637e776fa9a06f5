@@ -1,0 +1,16 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: service-two
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://discovery-service:8761/eureka
+    
+  instance:
+    hostname: localhost
+
+

@@ -1,0 +1,4 @@
+FROM openjdk:8
+ADD target/discoveryservice.jar discoveryservice.jar
+
+ENTRYPOINT ["java","-jar","discoveryservice.jar"]

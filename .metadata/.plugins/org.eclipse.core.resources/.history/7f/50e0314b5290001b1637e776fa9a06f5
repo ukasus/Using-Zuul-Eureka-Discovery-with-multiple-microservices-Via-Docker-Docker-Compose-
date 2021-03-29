@@ -1,0 +1,23 @@
+server:
+  port: 8765
+spring:
+  application:
+    name: zuul-service
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://discovery-service:8761/eureka
+  instance:
+    hostname: localhost
+zuul:
+  routes:
+    service-one:
+      path: /serviceOne/**
+      serviceId: service-one
+      strip-prefix: true
+    service-two:
+      path: /serviceTwo/**
+      serviceId: service-two
+      strip-prefix: true
